@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 from prettytable import PrettyTable
 
-def call_stock_analysis_api(stock_code, market_type='A', start_date=None, end_date=None, api_url="http://localhost:8085", auth_token=None):
+def call_stock_analysis_api(stock_code, market_type='A', start_date=None, end_date=None, api_url=None, auth_token=None):
     """
     调用股票分析API接口
     
@@ -131,11 +131,12 @@ def main():
     market_type = "ETF"
     start_date = ""
     end_date = ""
+    url = "http://192.168.100.1:8085"
     auth_token = "sk-zhouhui1122444"  # 替换为实际的Token
     
     # 调用API
     print(f"\n正在分析股票 {stock_code}...")
-    result = call_stock_analysis_api(stock_code, market_type, start_date, end_date, auth_token=auth_token)
+    result = call_stock_analysis_api(stock_code, market_type, start_date, end_date, url, auth_token=auth_token)
     
     if result:
         # 显示技术指标概要

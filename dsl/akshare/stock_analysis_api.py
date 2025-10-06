@@ -30,7 +30,7 @@ def verify_auth_token(authorization: str = Header(None)):
         raise HTTPException(status_code=401, detail="Invalid Authorization Scheme")
     
     # 这里可以替换为实际的 Token 验证逻辑
-    valid_tokens = ["sk-zhouhui1122444", "zhouhui11224555"]  # 示例有效 Token 列表
+    valid_tokens = ["key-stockanalysis-304"]  # 示例有效 Token 列表
     if token not in valid_tokens:
         raise HTTPException(status_code=403, detail="Invalid or Expired Token")
     
